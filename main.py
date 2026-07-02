@@ -13,7 +13,7 @@ from oes_client import client as oes_client
 from odk_tools.reporting import report
 from odk_tools.tracking import Tracker
 
-proces_navn = "Brugerluk OES"
+proces_navn = "Brugerluk ØS"
 
 
 def populate_queue(workqueue: Workqueue, boss: boss_client.BossClient):
