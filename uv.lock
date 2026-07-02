@@ -359,7 +359,7 @@ wheels = [
 [[package]]
 name = "odk-tools"
 version = "0.2.1"
-source = { git = "https://github.com/odense-rpa/odk-tools.git#3d6639bcdbcab15f91c6c867d3f4a8ce0e6db638" }
+source = { git = "https://github.com/odense-rpa/odk-tools.git#fff2e34103fb4909088f0c8b3957f0594daaa94e" }
 dependencies = [
     { name = "httpx" },
     { name = "pymssql" },
@@ -370,7 +370,7 @@ dependencies = [
 [[package]]
 name = "oes-client"
 version = "0.3.0"
-source = { git = "https://github.com/odense-rpa/oes-client.git#494efa2e234a525690524cd1f9b8a3e2bccb1a54" }
+source = { git = "https://github.com/odense-rpa/oes-client.git#71d4b1b66d96efa6c8108840ada7520e384c6aae" }
 dependencies = [
     { name = "authlib" },
     { name = "httpx" },
