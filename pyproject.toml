@@ -6,7 +6,14 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "automation-server-client",
+    "boss-client",
+    "oes-client",
+    "odk-tools",
+    "ruff>=0.15.20",
 ]
 
 [tool.uv.sources]
 automation-server-client = { git = "https://github.com/odense-rpa/automation-server-client.git", tag = "v0.3.0" }
+oes-client = { git = "https://github.com/odense-rpa/oes-client.git"}
+boss-client = { git = "https://github.com/odense-rpa/boss-client.git" }
+odk-tools = { git = "https://github.com/odense-rpa/odk-tools.git" }
