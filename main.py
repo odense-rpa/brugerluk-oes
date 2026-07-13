@@ -19,7 +19,9 @@ proces_navn = "Brugerluk ØS"
 def populate_queue(workqueue: Workqueue, boss: boss_client.BossClient):
     logger = logging.getLogger(__name__)
     systems = boss.hent_systemer()
-    boss_items = [item for item in systems["systems"] if item["systemName"] == "OS Indsigt"]
+    boss_items = [
+        item for item in systems["systems"] if item["systemName"] == "OS Indsigt"
+    ]
 
     for item in boss_items:
         workqueue.add_item(item, item["initials"])
@@ -38,7 +40,8 @@ def process_workqueue(
             data = item.data  # Item data deserialized from json as dict
 
             try:
-                oes.slet_bruger(data["email"])
+                oes.fremsoeg_bruger(data["initials"])
+                oes.slet_bruger()
                 boss.marker_bruger_som_slettet(data["id"])
                 tracker.track_task(proces_navn)
             except ValueError as e:
@@ -69,9 +72,9 @@ if __name__ == "__main__":
 
     oes = oes_client.OESClient(
         base_url=robob_credential.data["oes_url"],
-        username=robob_credential.username,
+        username=f"{robob_credential.username}@odense.dk",
         password=robob_credential.password,
-        headless=False
+        headless=True,
     )
 
     tracker = Tracker(
