@@ -44,6 +44,11 @@ def process_workqueue(
                 oes.slet_bruger()
                 boss.marker_bruger_som_slettet(data["id"])
                 tracker.track_task(proces_navn)
+                report(
+                    "brugerluk_oes",
+                    "Lukkede brugere",
+                    {"Brugernavn": data["initials"]},
+                )
             except ValueError as e:
                 report(
                     "brugerluk_oes",
