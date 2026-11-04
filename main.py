@@ -40,8 +40,8 @@ def process_workqueue(
             data = item.data  # Item data deserialized from json as dict
 
             try:
-                oes.fremsoeg_bruger(data["initials"])
-                oes.slet_bruger()
+                oes.brugere.fremsoeg_bruger(data["initials"])
+                oes.brugere.slet_bruger()
                 boss.marker_bruger_som_slettet(data["id"])
                 tracker.track_task(proces_navn)
                 report(
