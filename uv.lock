@@ -442,7 +442,7 @@ dependencies = [
 [[package]]
 name = "oes-client"
 version = "0.6.3"
-source = { git = "https://github.com/odense-rpa/oes-client.git#d052987a0d65d40af8c97481779e03e65b94d9b7" }
+source = { git = "https://github.com/odense-rpa/oes-client.git#539c9bf41915a264d992185cf036d9cea80bc450" }
 dependencies = [
     { name = "authlib" },
     { name = "httpx" },
